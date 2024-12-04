@@ -32,6 +32,6 @@ linter:
   rules:
     - prefer_const_constructors
     - require_trailing_commas
-    - lines_longer_than_80_chars
+    # - lines_longer_than_80_chars
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

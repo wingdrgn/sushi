@@ -75,7 +75,7 @@ class IntroPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const Text(
-                    'THE TASTE OF JAPANNESE FOOD',
+                    'THE TASTE OF JAPANESE FOOD',
                     style: TextStyle(fontSize: 40, color: Colors.white),
                   ),
                   const SizedBox(height: 10),
