@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sushi/pages/intro_page.dart';
+import 'package:sushi/pages/menu_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: IntroPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const IntroPage(),
+      routes: {
+        '/intropage': (context) => const IntroPage(),
+        '/menupage': (context) => const MenuPage()
+      },
     );
   }
 }
