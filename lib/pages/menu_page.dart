@@ -127,7 +127,7 @@ class _MenuPageState extends State<MenuPage> {
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               'Food Menu',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
             ),
           ),
           Padding(
@@ -140,6 +140,61 @@ class _MenuPageState extends State<MenuPage> {
                 itemBuilder: (context, index) =>
                     FoodTitle(food: foodMenu[index], onTap: () {}),
               ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              'Popular Menu',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.grey[100],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  'lib/images/salmon_tobiko.png',
+                  height: 80,
+                ),
+                SizedBox(
+                  height: 60,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text(
+                        'Salmonn Tobiko',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 18),
+                      ),
+                      Text(
+                        foodMenu[3].price,
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: primaryColor,
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    Text(foodMenu[3].rating),
+                  ],
+                ),
+                const Icon(Icons.favorite_border_outlined),
+              ],
             ),
           ),
         ],

@@ -72,6 +72,7 @@ flutter:
     - lib/images/ramen.png
     - lib/images/drinks.png
     - lib/images/shrimp_sushi.png
+    - lib/images/salmon_tobiko.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
