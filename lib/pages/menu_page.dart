@@ -7,6 +7,7 @@ import 'package:sushi/components/filter_title.dart';
 import 'package:sushi/components/food_title.dart';
 import 'package:sushi/models/shop.dart';
 import 'package:sushi/models/filter_menu.dart';
+import 'food_details_page.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -16,7 +17,17 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  void navigateToFoodDetail() {}
+  void navigateToFoodDetail(int index) {
+    final shop = context.read<Shop>();
+    final foodMenu = shop.foodMenu;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FoodDetailsPage(food: foodMenu[index]),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -137,8 +148,12 @@ class _MenuPageState extends State<MenuPage> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: filterFood.length,
-                itemBuilder: (context, index) =>
-                    FoodTitle(food: foodMenu[index], onTap: () {}),
+                itemBuilder: (context, index) => FoodTitle(
+                  food: foodMenu[index],
+                  onTap: () {
+                    navigateToFoodDetail(index);
+                  },
+                ),
               ),
             ),
           ),
@@ -170,7 +185,7 @@ class _MenuPageState extends State<MenuPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       const Text(
-                        'Salmonn Tobiko',
+                        'Salmon Tobiko',
                         style: TextStyle(
                             fontWeight: FontWeight.w600, fontSize: 18),
                       ),
