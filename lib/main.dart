@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:sushi/pages/intro_page.dart';
 import 'package:sushi/pages/menu_page.dart';
+import 'package:sushi/pages/http_page.dart';
 import 'package:sushi/models/shop.dart';
 import 'package:sushi/models/filter_menu.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intropage': (context) => const IntroPage(),
         '/menupage': (context) => const MenuPage(),
+        '/httppage': (context) => const HttpPage(),
       },
     );
   }

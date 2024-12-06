@@ -41,7 +41,12 @@ class _MenuPageState extends State<MenuPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey[800],
-        leading: const Icon(Icons.menu),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/httppage');
+          },
+          icon: const Icon(Icons.menu),
+        ),
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
