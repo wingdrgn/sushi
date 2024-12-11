@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
+import 'package:sushi/main.dart';
 
 import 'package:sushi/theme/colors.dart';
 import 'package:sushi/components/button.dart';
@@ -8,6 +9,7 @@ import 'package:sushi/components/food_title.dart';
 import 'package:sushi/models/shop.dart';
 import 'package:sushi/models/filter_menu.dart';
 import 'food_details_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -47,16 +49,16 @@ class _MenuPageState extends State<MenuPage> {
           },
           icon: const Icon(Icons.menu),
         ),
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.location_on_outlined, color: primaryColor),
-            SizedBox(
+            const Icon(Icons.location_on_outlined, color: primaryColor),
+            const SizedBox(
               width: 2,
             ),
             Text(
-              'Tokyo',
-              style: TextStyle(fontSize: 20),
+              AppLocalizations.of(context)!.helloWorld,
+              style: const TextStyle(fontSize: 20),
             ),
           ],
         ),
@@ -72,8 +74,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: [
           Container(
             decoration: BoxDecoration(
@@ -99,7 +100,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
                 Image.asset(
                   'lib/images/tomago_sushi.png',
-                  height: 100,
+                  height: 80,
                 ),
               ],
             ),

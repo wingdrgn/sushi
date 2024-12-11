@@ -1,0 +1,10 @@
+{
+  "helloWorld": "东京",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "sushiman": "寿司侠",
+  "@sushiman": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}

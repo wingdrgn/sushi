@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sushi/theme/colors.dart';
 import 'package:sushi/components/button.dart';
-
+import 'package:sushi/models/language.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // class IntroPage extends StatefulWidget {
 //   const IntroPage({super.key});
 
@@ -46,7 +48,7 @@ class IntroPage extends StatelessWidget {
                 Text(
                   '食',
                   style: TextStyle(color: Colors.white, fontSize: 100.0),
-                )
+                ),
               ],
             ),
           ),
@@ -57,13 +59,13 @@ class IntroPage extends StatelessWidget {
             child: Image.asset("lib/images/intro_page_chopsticks.png",
                 width: 400, height: 400, fit: BoxFit.scaleDown),
           ),
-          const Align(
+          Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(25, 50, 25, 0),
+              padding: const EdgeInsets.fromLTRB(25, 50, 25, 0),
               child: Text(
-                'SUSHIMAN',
-                style: TextStyle(fontSize: 28, color: Colors.white),
+                AppLocalizations.of(context)!.sushiman,
+                style: const TextStyle(fontSize: 28, color: Colors.white),
               ),
             ),
           ),
@@ -99,6 +101,16 @@ class IntroPage extends StatelessWidget {
                   Navigator.pushNamed(context, '/menupage');
                 },
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              padding: const EdgeInsets.only(top: 50, right: 25),
+              onPressed: () {
+                context.read<LanguageProvider>().toggleLanguage();
+              },
+              icon: const Icon(Icons.language),
             ),
           ),
         ],
