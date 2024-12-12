@@ -4,12 +4,9 @@ import 'package:sushi/components/button.dart';
 import 'package:sushi/models/language.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-// class IntroPage extends StatefulWidget {
-//   const IntroPage({super.key});
-
-//   @override
-//   State<IntroPage> createState() => IntroPgaeState();
-// }
+import 'package:sushi/components/animate.dart';
+import 'package:sushi/components/custom_route.dart';
+import 'package:sushi/pages/menu_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -52,12 +49,11 @@ class IntroPage extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
+          const Positioned(
             right: 30,
             top: 30,
             bottom: 150.0,
-            child: Image.asset("lib/images/intro_page_chopsticks.png",
-                width: 400, height: 400, fit: BoxFit.scaleDown),
+            child: Animate(),
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -98,7 +94,14 @@ class IntroPage extends StatelessWidget {
               child: MyButton(
                 text: 'Get start!!!',
                 onTap: () {
-                  Navigator.pushNamed(context, '/menupage');
+                  Navigator.push(
+                    context,
+                    CustomPageRoute(
+                      page: const MenuPage(),
+                      duration: const Duration(milliseconds: 1000),
+                      curve: Curves.elasticInOut,
+                    ),
+                  );
                 },
               ),
             ),

@@ -10,6 +10,8 @@ import 'package:sushi/models/shop.dart';
 import 'package:sushi/models/filter_menu.dart';
 import 'food_details_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sushi/components/custom_route.dart';
+import 'package:sushi/pages/intro_page.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -45,9 +47,9 @@ class _MenuPageState extends State<MenuPage> {
         foregroundColor: Colors.grey[800],
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/httppage');
+            Navigator.of(context).pop();
           },
-          icon: const Icon(Icons.menu),
+          icon: const Icon(Icons.arrow_back),
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,9 +67,9 @@ class _MenuPageState extends State<MenuPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/cartpage');
+              Navigator.pushNamed(context, '/httppage');
             },
-            icon: const Icon(Icons.shopping_cart_outlined),
+            icon: const Icon(Icons.menu),
           ),
           const SizedBox(
             width: 2,
